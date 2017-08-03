@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Contact Card</title>
+    <link rel="stylesheet" href="contactCard.css">
+    <script type="text/javascript" src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'>
+    //this link is jQuery libary
+    </script>
+    <script type="text/javascript">
+
+
+      $(document).ready(function(){
+
+
+        $('form').submit(function(){
+          return false;
+        });
+
+        $('button').click(function(){
+          $('form').submit();
+
+          var nameF = $('#first').val();
+          var nameL = $('#last').val();
+          var description = $('#description').val();
+
+
+          //DEBUGGING!!!!!!!
+          //use BACKTICKS `` to represent ur string so u can use ${} to interpolate ur var
+          $('aside').append(`<div class = "card"> <h2>${nameF}</h2> <h2>${nameL}</h2> <h3  style="display:none">${description}</h3> <p>Click for description</p> </div>`);
+
+          });
+
+          $(document).on('click', '.card', function(){
+            $(this).children('h2,p').hide();
+            $(this).children('h3').toggle();
+          });
+
+      });
+    </script>
+  </head>
+  <body>
+    <section>
+      <form action="index.html" method="post">
+        <div>
+          First name: <input type="text" name="name" value="First Name" id="first">
+        </div>
+        <div>
+          Last name: <input type="text" name="name" value="Last Name" id="last">
+        </div>
+        <div>
+          Description: <input type="text" name="name" value="Enter Description" id="description">
+        </div>
+      </form>
+      <button>Add User</button>
+    </section>
+
+    <aside></aside>
+  </body>
+</html>

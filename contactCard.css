@@ -1,0 +1,26 @@
+section, aside{
+  display: inline-block;
+  margin: 30px;
+  vertical-align: top;
+}
+  form{
+
+  }
+    form > div{
+      margin: 10px;
+    }
+    #description{
+      width: 200px;
+      height: 100px;
+      text-align: center;
+    }
+aside > div{
+  width: 290px;
+  height: 160px;
+  margin: 10px;
+  text-align: center;
+  border: 2px black solid;
+}
+  aside > div > h2{
+    display: inline-block;
+  }
